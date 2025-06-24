@@ -1,6 +1,4 @@
 # Coding assignment
-Provide a ReadMe.md file containing: How to run the application, and considerations that went into it, any future improvements or performance enhancements you would do if you had more time.
-
 
 To run install 
 fastapi
