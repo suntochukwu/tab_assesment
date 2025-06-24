@@ -9,53 +9,7 @@ import os
 from fastapi.testclient import TestClient
 app= FastAPI()
 
-
-
-
-
-# try:
-#     # 2. Create the engine
-#     engine= create_engine(os.environ["DATABASE_URL"], echo=True)
-#     # 3. Test the connection (optional, but good practice)
-#     # This will attempt to connect and raise an exception if it fails
-
-#     with engine.connect() as connection:
-#         print("Successfully connected to the database!")
-#         # You can execute a simple query to further verify
-#         # result = connection.execute(text("SELECT 1"))
-#         # print(f"Query result: {result.scalar()}")
-        
-#     # 4. Create a sessionmaker for interacting with the database (for ORM)
-#     SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-# except Exception as e:
-#     print(f"Error connecting to the database: {e}")
-
-# Base = declarative_base()
-
-# class User(Base):
-#     __tablename__ = 'users'
-
-#     id = Column(Integer, primary_key=True)
-#     name = Column(String, nullable=False)
-#     email = Column(String, unique=True, nullable=False)
-#     age = Column(Integer)
-
-# class Product(Base):
-#     __tablename__ = 'products'
-
-#     id = Column(Integer, primary_key=True)
-#     name = Column(String, nullable=False)
-#     price = Column(Integer, nullable=False)
-
-
-# def get_db():
-#     db = SessionLocal()
-#     try:
-#         yield db
-#     finally:
-#         db.close()
-
+#automatically load datasets on server start
 with open('assets/accounts.json') as fp:
     accounts = json.load(fp)
 
