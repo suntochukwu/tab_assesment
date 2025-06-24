@@ -1,20 +1,20 @@
 # Coding assignment
 
-# To run enter into terminal these commands:
+# To run this code :
+
+Enter the commands below into the terminal and hit enter.
 
 #create a virtual env
 
-python3 -mvenv venv && source ./venv/bin/activate
+> python3 -mvenv venv && source ./venv/bin/activate
 
-Install dependancies by typing in the terminal:
+Install dependancies by typing into the terminal:
 
-pip install -r requirements.txt
+> pip install -r requirements.txt
 
-To run server type into the terminal : 
+To start the server, type into the terminal : 
 
-uvicorn main:app --reload 
-
-
+> uvicorn main:app --reload 
 
 
 The script will :
@@ -59,7 +59,7 @@ If this is not the case the endpoint with return a 505 error.
 - The endpoint returns an error 505-SERVER ERROR if there is an error in the calculations i.e irregular formating in the tx.json etc
 
 
-#TESTING
+# UNIT TESTS
 
 To run the unit tests in the test_tx file, type in 'pytest' into the terminal (outside of the server- press ctrl + C to exit server if it is running).
 
@@ -70,7 +70,7 @@ There is one test that checks:
 2- A valid 202 response for a particular account_id
 
 
-#Future improvements
+# Future improvements
 
 - For larger datasets I would use pandas/polars and load the csv/json into a dataframe for faster calculations
 
