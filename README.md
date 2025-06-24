@@ -13,8 +13,14 @@ pip install -r requirements.txt
 To run server: 
 
 uvicorn main:app --reload 
+Upon starting the server in the terminal will be a line:
+INFO: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 
-#you're ready to go!
+# Testing using postman
+Open postman and paste in the port after starting the uvicorn server
+According to the line above the port is:  http://127.0.0.1:8000
+Remember it's a GET request ie .get('/') should be used in postman.
+In Postman enter the port and as params: key: 'account_id' and the value: '1234' and press send to get a response.
 
 
 #Assumptions
