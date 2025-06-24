@@ -1,38 +1,20 @@
 # Coding assignment
 
-To run enter into terminal these commands:
+# To run enter into terminal these commands:
 
 #create a virtual env
 
 python3 -mvenv venv && source ./venv/bin/activate
 
-# install dependancies -fast api pydantic httpx etc
+Install dependancies by typing in the terminal:
 
 pip install -r requirements.txt
 
-To run server: 
+To run server type into the terminal : 
 
 uvicorn main:app --reload 
-Upon starting the server in the terminal will be a line:
-INFO: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-
-# Testing using postman
-Open postman and paste in the port after starting the uvicorn server
-According to the line above the port is:  http://127.0.0.1:8000
-Remember it's a GET request ie .get('/') should be used in postman.
-In Postman enter the port and as params: key: 'account_id' and the value: '1234' and press send to get a response.
 
 
-#Assumptions
-Assumption is that the json data types are consistently is str data type that can be converted to float().
-
-#Considerations
-
-I have used the float data type instead of int as I assume that is more appropriate for currency transactions.
-
-My script lists ALL the currencies the account transacts in, not just eur and gbp.
-
-The file retrieves all names/accounts associated with the account_id but only shows the first.
 
 
 The script will :
@@ -41,13 +23,40 @@ The script will :
 
 2- Search for all txs of the account_id and return a formatted json of 'settled','refunded', 'chargeback' and 'balance' details for ALL currencies the acccount has transacted with.
 
+# Testing using postman
+
+Upon starting the server in the terminal will be a line:
+
+INFO: Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+
+Open postman and paste in the http string after starting the uvicorn server
+
+* According to the line above the port is:  http://127.0.0.1:8000
+
+Remember it's a GET request ie .get('/') should be used in Postman.
+
+In Postman enter the port and as params: key: 'account_id' and the value: '1234' and press send to get a response.
 
 
-#Error cases
+# Assumptions
 
-The endpoint returns an error 404-NOT FOUND if there is no account found
+Assumption is that the json data types are consistently is str data type that can be converted to float().
+If this is not the case the endpoint with return a 505 error.
 
-The endpoint returns an error 505-SERVER ERROR if there is an error in the calculations i.e irregular formating in the tx.json etc
+# Considerations
+
+- I have used the float data type instead of int as I assume that is more appropriate for currency transactions.
+
+- My script lists ALL the currencies the account transacts in, not just eur and gbp.
+
+- The file retrieves all names/accounts associated with the account_id but only shows the first.
+
+
+# Error cases
+
+- The endpoint returns an error 404-NOT FOUND if there is no account found
+
+- The endpoint returns an error 505-SERVER ERROR if there is an error in the calculations i.e irregular formating in the tx.json etc
 
 
 #TESTING
