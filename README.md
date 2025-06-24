@@ -19,9 +19,9 @@ To start the server, type into the terminal :
 
 The script will :
 
-1- Search the accounts json as requested for the all user accounts details associated with the account_id
+* Search the accounts json as requested for the all user accounts details associated with the account_id
 
-2- Search for all txs of the account_id and return a formatted json of 'settled','refunded', 'chargeback' and 'balance' details for ALL currencies the acccount has transacted with.
+* Search for all txs of the account_id and return a formatted json of 'settled','refunded', 'chargeback' and 'balance' details for ALL currencies the acccount has transacted with.
 
 # Testing using postman
 
@@ -65,9 +65,9 @@ To run the unit tests in the test_tx file, type in 'pytest' into the terminal (o
 
 There is one test that checks:
 
-1- the 404 response when no account is found for the req account_id
+- the 404 response when no account is found for the req account_id
 
-2- A valid 202 response for a particular account_id
+- A valid 202 response for a particular account_id
 
 
 # Future improvements
